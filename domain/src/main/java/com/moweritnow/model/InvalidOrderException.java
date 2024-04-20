@@ -1,5 +1,8 @@
 package com.moweritnow.model;
 
+import lombok.Getter;
+
+@Getter
 public class InvalidOrderException extends Exception {
     private final char order;
 

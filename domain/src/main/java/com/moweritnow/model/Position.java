@@ -1,6 +1,5 @@
 package com.moweritnow.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,21 +8,30 @@ import lombok.Setter;
 public class Position {
     private int x;
     private int y;
-    public void moveToNorth(){
+
+    public Position(String sX, String sY) {
+        x = Integer.parseInt(sX);
+        y = Integer.parseInt(sY);
+    }
+
+    public void moveToNorth() {
         y++;
     }
-    public void moveToEast(){
+
+    public void moveToEast() {
         x++;
     }
-    public void moveToSouth(){
+
+    public void moveToSouth() {
         y--;
     }
-    public void moveToWest(){
+
+    public void moveToWest() {
         x--;
     }
 
     @Override
-    public String toString(){
-        return x+","+y;
+    public String toString() {
+        return x + "," + y;
     }
 }

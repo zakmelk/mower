@@ -1,6 +1,6 @@
 package cucumber;
 
-import com.moweritnow.model.InvalidOrderException;
+import com.moweritnow.model.exception.InvalidOrderException;
 import com.moweritnow.model.OrderEnum;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

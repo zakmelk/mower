@@ -1,5 +1,6 @@
 package com.moweritnow.model;
 
+import com.moweritnow.model.exception.InvalidOrderException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

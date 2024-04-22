@@ -1,4 +1,4 @@
-package com.moweritnow.model;
+package com.moweritnow.model.exception;
 
 import lombok.Getter;
 

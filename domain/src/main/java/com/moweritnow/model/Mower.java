@@ -1,15 +1,8 @@
 package com.moweritnow.model;
 
-import com.moweritnow.model.exception.InvalidOrderException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.moweritnow.utils.InputValidator.*;
 
 @Slf4j
 @AllArgsConstructor
@@ -25,7 +18,6 @@ public class Mower {
             case G -> turnLeft();
         }
     }
-
 
     public boolean isValidOrder(Lawn lawn, OrderEnum order) {
         if (OrderEnum.A.equals(order)) {
@@ -76,6 +68,6 @@ public class Mower {
 
     @Override
     public String toString() {
-        return (new StringBuilder()).append("(").append(position).append(",").append(orientation).append(")").toString();
+        return (new StringBuilder()).append(position).append(" ").append(orientation).toString();
     }
 }

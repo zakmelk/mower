@@ -1,4 +1,4 @@
-package com.moweritnow.ports;
+package com.moweritnow.ports.out;
 
 import com.moweritnow.model.Mower;
 

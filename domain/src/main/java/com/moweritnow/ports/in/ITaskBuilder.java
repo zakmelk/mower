@@ -1,4 +1,4 @@
-package com.moweritnow.ports;
+package com.moweritnow.ports.in;
 
 import com.moweritnow.model.Lawn;
 import com.moweritnow.model.Task;

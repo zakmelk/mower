@@ -11,11 +11,16 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import static com.moweritnow.utils.InputValidator.*;
+import java.util.regex.Pattern;
 
 @Slf4j
 public class InputValidator {
+    public static final String REGEX_NUM = "\\d+";
+    public static final String DELIMITER_SPACE = " ";
+    public static final String REGEX_ORIENTATION = "[NEWS]";
+    public static final Pattern PATTERN_ORIENTATION = Pattern.compile(REGEX_ORIENTATION);
+    public static final String REGEX_MOVE = "[GAD]";
+    public static final Pattern PATTERN_MOVE = Pattern.compile(REGEX_MOVE);
 
     public static List<String> getLines(String fileName) {
         List<String> lines = new ArrayList<>();

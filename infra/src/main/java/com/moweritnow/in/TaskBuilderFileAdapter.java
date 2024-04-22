@@ -1,15 +1,13 @@
 package com.moweritnow.in;
 
 import com.moweritnow.model.*;
-import com.moweritnow.ports.ITaskBuilder;
+import com.moweritnow.ports.in.ITaskBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.ListUtils;
 
 import java.util.*;
 
-import static com.moweritnow.in.InputValidator.getLines;
-import static com.moweritnow.in.InputValidator.isFileValid;
-import static com.moweritnow.utils.InputValidator.DELIMITER_SPACE;
+import static com.moweritnow.in.InputValidator.*;
 
 @Slf4j
 public class TaskBuilderFileAdapter implements ITaskBuilder {
@@ -24,6 +22,7 @@ public class TaskBuilderFileAdapter implements ITaskBuilder {
         return tasksPerLawn;
     }
 
+    @Override
     public void loadTasks(String fileName) {
         if (isFileValid(fileName)) {
             List<String> lines = getLines(fileName);

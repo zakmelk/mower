@@ -1,9 +1,5 @@
 package com.moweritnow.model;
 
-import com.moweritnow.model.exception.InvalidOrderException;
-
-import static com.moweritnow.utils.Constants.INVALID_ORDER;
-
 public enum OrderEnum {
     A,D,G,UNDEFINED;
 

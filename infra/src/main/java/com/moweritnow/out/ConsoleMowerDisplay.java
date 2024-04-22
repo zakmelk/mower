@@ -1,7 +1,7 @@
 package com.moweritnow.out;
 
 import com.moweritnow.model.Mower;
-import com.moweritnow.ports.IMowerDisplay;
+import com.moweritnow.ports.out.IMowerDisplay;
 
 public class ConsoleMowerDisplay implements IMowerDisplay {
     @Override

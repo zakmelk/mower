@@ -2,11 +2,13 @@ package com.moweritnow.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @AllArgsConstructor
 @Builder
+@Getter
 public class Mower {
     private Position position;
     private OrientationEnum orientation;

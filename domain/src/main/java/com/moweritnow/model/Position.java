@@ -1,10 +1,12 @@
 package com.moweritnow.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Position {
     private int x;
     private int y;
@@ -33,5 +35,17 @@ public class Position {
     @Override
     public String toString() {
         return x + " " + y;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Position)) {
+            return false;
+        }
+        Position other = (Position) o;
+        return x == other.x && y == other.y;
     }
 }

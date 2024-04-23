@@ -7,6 +7,7 @@ import com.moweritnow.ports.out.IMowerDisplay;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Queue;
@@ -20,8 +21,8 @@ public class MowerService {
     public void launch(IMowerDisplay mowerDisplay) {
         Map<Lawn, Queue<Task>> tasksPerLawn = getTasksPerLawn();
         if (Objects.nonNull(tasksPerLawn) && !tasksPerLawn.isEmpty()) {
-            BiConsumer<Lawn, Queue<Task>> tasksPerLawnConsumer = (lawn, tasks) -> tasks.stream().forEach(t -> mowerDisplay.display(t.executeOrders(lawn)));
-            tasksPerLawn.forEach((lawn, tasks) -> tasksPerLawnConsumer.accept(lawn, tasks));
+            BiConsumer<Lawn, Queue<Task>> tasksPerLawnConsumer = (lawn, tasks) -> tasks.forEach(t -> mowerDisplay.display(t.executeOrders(lawn)));
+            tasksPerLawn.forEach(tasksPerLawnConsumer::accept);
         } else {
             log.warn("No tasks to launch !");
         }
@@ -31,6 +32,6 @@ public class MowerService {
         if (Objects.nonNull(taskBuilder)) {
             return taskBuilder.getTasks();
         }
-        return null;
+        return new HashMap<>();
     }
 }

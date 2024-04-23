@@ -18,23 +18,30 @@ public class Mower {
             case A -> moveForward();
             case D -> turnRight();
             case G -> turnLeft();
+            default -> doNothing();
         }
+    }
+
+    private void doNothing() {
     }
 
     public boolean isValidOrder(Lawn lawn, OrderEnum order) {
         if (OrderEnum.A.equals(order)) {
             switch (orientation) {
                 case N -> {
-                    return position.getY() < lawn.m() ? true : false;
+                    return position.getY() < lawn.m();
                 }
                 case E -> {
-                    return position.getX() < lawn.n() ? true : false;
+                    return position.getX() < lawn.n();
                 }
                 case S -> {
-                    return position.getY() > 0 ? true : false;
+                    return position.getY() > 0;
                 }
                 case W -> {
-                    return position.getX() > 0 ? true : false;
+                    return position.getX() > 0;
+                }
+                default -> {
+                    return false;
                 }
             }
         }
@@ -47,6 +54,7 @@ public class Mower {
             case E -> orientation = OrientationEnum.N;
             case S -> orientation = OrientationEnum.E;
             case W -> orientation = OrientationEnum.S;
+            default -> doNothing();
         }
     }
 
@@ -56,6 +64,7 @@ public class Mower {
             case E -> orientation = OrientationEnum.S;
             case S -> orientation = OrientationEnum.W;
             case W -> orientation = OrientationEnum.N;
+            default -> doNothing();
         }
     }
 
@@ -65,11 +74,12 @@ public class Mower {
             case E -> position.moveToEast();
             case W -> position.moveToWest();
             case S -> position.moveToSouth();
+            default -> doNothing();
         }
     }
 
     @Override
     public String toString() {
-        return (new StringBuilder()).append(position).append(" ").append(orientation).toString();
+        return String.format("%s %s",position,orientation);
     }
 }

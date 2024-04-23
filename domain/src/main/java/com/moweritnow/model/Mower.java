@@ -80,6 +80,6 @@ public class Mower {
 
     @Override
     public String toString() {
-        return String.format("%s %s",position,orientation);
+        return String.format("%s %s", position, orientation);
     }
 }

@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MyStepdefs {
     private TaskBuilderFileAdapter taskBuilderFileAdapter;
     private String fileName;
+
     @Given("TaskBuilderFileAdapter")
     public void taskbuilderfileadapter() {
         taskBuilderFileAdapter = new TaskBuilderFileAdapter();
@@ -20,6 +21,6 @@ public class MyStepdefs {
 
     @Then("tasks should have {string} task")
     public void tasksShouldHaveTask(String taskSize) {
-        assertEquals(Integer.parseInt(taskSize),taskBuilderFileAdapter.getTasks().size());
+        assertEquals(Integer.parseInt(taskSize), taskBuilderFileAdapter.getTasks().size());
     }
 }

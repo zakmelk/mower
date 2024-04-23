@@ -3,16 +3,16 @@ package com.moweritnow.model;
 import org.apache.commons.lang3.StringUtils;
 
 public enum OrderEnum {
-    A,D,G,UNDEFINED;
+    A, D, G, UNDEFINED;
 
     public static OrderEnum fromString(String value) {
-        if(StringUtils.isNotBlank(value)){
+        if (StringUtils.isNotBlank(value)) {
             switch (value) {
-                case "A" :
+                case "A":
                     return OrderEnum.A;
-                case "D" :
+                case "D":
                     return OrderEnum.D;
-                case "G" :
+                case "G":
                     return OrderEnum.G;
                 default:
                     return OrderEnum.UNDEFINED;

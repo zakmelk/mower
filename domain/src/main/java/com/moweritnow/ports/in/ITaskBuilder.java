@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Queue;
 
 public interface ITaskBuilder {
-    Map<Lawn,Queue<Task>> getTasks();
+    Map<Lawn, Queue<Task>> getTasks();
+
     void loadTasks(String s) throws IOException, URISyntaxException;
 }

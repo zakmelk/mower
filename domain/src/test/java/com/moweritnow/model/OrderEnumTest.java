@@ -2,14 +2,14 @@ package com.moweritnow.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OrderEnumTest {
 
     @Test
     void fromString() {
-        assertEquals(OrderEnum.D,OrderEnum.fromString("D"));
-        assertEquals(OrderEnum.UNDEFINED,OrderEnum.fromString(""));
-        assertEquals(OrderEnum.UNDEFINED,OrderEnum.fromString(null));
+        assertEquals(OrderEnum.D, OrderEnum.fromString("D"));
+        assertEquals(OrderEnum.UNDEFINED, OrderEnum.fromString(""));
+        assertEquals(OrderEnum.UNDEFINED, OrderEnum.fromString(null));
     }
 }

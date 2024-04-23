@@ -15,10 +15,10 @@ public class Task {
 
     public Mower executeOrders(Lawn lawn) {
         for (OrderEnum order : orders) {
-            if (mower.isValidOrder(lawn,order)) {
+            if (mower.isValidOrder(lawn, order)) {
                 mower.executeOrder(order);
             } else {
-                log.warn("Order {} is not valid for mower:{} and lawn:{}, skipping !", order, mower,lawn);
+                log.warn("Order {} is not valid for mower:{} and lawn:{}, skipping !", order, mower, lawn);
             }
         }
         return mower;

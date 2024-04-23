@@ -3,17 +3,18 @@ package com.moweritnow.model;
 import org.apache.commons.lang3.StringUtils;
 
 public enum OrientationEnum {
-    N,E,W,S,UNDEFINED;
+    N, E, W, S, UNDEFINED;
+
     public static OrientationEnum fromString(String value) {
-        if(StringUtils.isNotBlank(value)){
+        if (StringUtils.isNotBlank(value)) {
             switch (value) {
-                case "N" :
+                case "N":
                     return OrientationEnum.N;
-                case "E" :
+                case "E":
                     return OrientationEnum.E;
-                case "W" :
+                case "W":
                     return OrientationEnum.W;
-                case "S" :
+                case "S":
                     return OrientationEnum.S;
                 default:
                     return OrientationEnum.UNDEFINED;

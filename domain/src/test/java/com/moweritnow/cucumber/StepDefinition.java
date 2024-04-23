@@ -1,4 +1,4 @@
-package cucumber;
+package com.moweritnow.cucumber;
 
 import com.moweritnow.model.*;
 import io.cucumber.java.en.Given;

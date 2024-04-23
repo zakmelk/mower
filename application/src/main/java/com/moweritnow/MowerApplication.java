@@ -11,14 +11,26 @@ import java.net.URISyntaxException;
 
 public class MowerApplication {
     public static void main(String[] args) throws IOException, URISyntaxException {
-        // 1. Instantiate input adapter
-        ITaskBuilder taskBuilderFileAdapter = new TaskBuilderFileAdapter();
-        taskBuilderFileAdapter.loadTasks("input-1.txt");
-        // 2. Instantiate hexagon
-        MowerService mowerService = new MowerService(taskBuilderFileAdapter);
-        // 3. Instantiate output adapter
-        IMowerDisplay mowerDisplay = new ConsoleMowerDisplay();
-        // 4. launch business logic
+        String fileName = "input-1.txt";
+        ITaskBuilder taskBuilderFileAdapter = getInputFileAdapter(fileName);
+        MowerService mowerService = getHexagon(taskBuilderFileAdapter);
+        IMowerDisplay mowerDisplay = getOutputDisplayAdapter();
         mowerService.launch(mowerDisplay);
+    }
+
+    private static IMowerDisplay getOutputDisplayAdapter() {
+        IMowerDisplay mowerDisplay = new ConsoleMowerDisplay();
+        return mowerDisplay;
+    }
+
+    private static MowerService getHexagon(ITaskBuilder taskBuilderFileAdapter) {
+        MowerService mowerService = new MowerService(taskBuilderFileAdapter);
+        return mowerService;
+    }
+
+    private static ITaskBuilder getInputFileAdapter(String fileName) throws IOException, URISyntaxException {
+        ITaskBuilder taskBuilderFileAdapter = new TaskBuilderFileAdapter();
+        taskBuilderFileAdapter.loadTasks(fileName);
+        return taskBuilderFileAdapter;
     }
 }
